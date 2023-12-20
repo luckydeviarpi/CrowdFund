@@ -274,7 +274,7 @@
                 <ul class="navbar-nav theme-brand flex-row  text-center">
                     <li class="nav-item theme-logo">
                         <a href="index.html">
-                        <img src="<?= base_url('assets/img/cork-logo.png'); ?>" class="navbar-logo" alt="logo">
+                            <img src="<?= base_url('assets/img/cork-logo.png'); ?>" class="navbar-logo" alt="logo">
                         </a>
                     </li>
                     <li class="nav-item theme-text">
@@ -978,8 +978,3 @@
             </nav>
 
         </div>
-<<<<<<< Updated upstream
-        <!--  END SIDEBAR  --> 
-=======
-
->>>>>>> Stashed changes

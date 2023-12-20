@@ -10,14 +10,9 @@ class User extends CI_Controller
     function index()
     {
         $data['user'] = $this->userrole->getBy();
-<<<<<<< Updated upstream
         $this->load->view("Header/header", $data);
         $this->load->view("User/vw_profile", $data);
         $this->load->view("Footer/footer", $data);
-=======
-        $this->load->view("Header/header");
-        $this->load->view("User/vw_profile", $data);
-        $this->load->view("Footer/footer");
     }
     function halamanedit()
     {
@@ -90,6 +85,5 @@ class User extends CI_Controller
         }
         $this->userrole->update($status_autentikasi, $provinsi, $kota, $no_telepon, $foto_ktp, $foto_npwp, $foto_asli);
         redirect('user');
->>>>>>> Stashed changes
     }
 }
