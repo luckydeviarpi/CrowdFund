@@ -8,7 +8,7 @@
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 layout-top-spacing">
                 <a href="<?= base_url('Test/detail') ?>" class="card-link">
                     <div class="card component-card_9">
-                        <img src="<?= base_url('assets') ?>/img/400x300.jpg" class="card-img-top" style="max-height: 200px;" alt="widget-card-2">
+                        <img src="<?= base_url('assets') ?>/img/momoyo.png" class="card-img-top" style="max-height: 300px;" alt="widget-card-2">
                         <div class="card-body">
                             <!-- <p class="meta-date">25 Sep 2020</p> -->
 
