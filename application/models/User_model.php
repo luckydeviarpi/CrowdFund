@@ -30,6 +30,27 @@ class User_model extends CI_Model
     $this->db->update($this->table, $data, $where);
     return $this->db->affected_rows();
   }
+
+  public function updateFotoKTP($where, $fotoKTP)
+  {
+    $data = array('foto_ktp' => $fotoKTP);
+    $this->db->update($this->table, $data, $where);
+    return $this->db->affected_rows();
+  }
+
+  public function updateFotoNPWP($where, $fotoNPWP)
+  {
+    $data = array('foto_npwp' => $fotoNPWP);
+    $this->db->update($this->table, $data, $where);
+    return $this->db->affected_rows();
+  }
+
+  public function updateFotoAsli($where, $fotoAsli)
+  {
+    $data = array('foto_asli' => $fotoAsli);
+    $this->db->update($this->table, $data, $where);
+    return $this->db->affected_rows();
+  }
   public function insert($data)
   {
     $this->db->insert($this->table, $data);

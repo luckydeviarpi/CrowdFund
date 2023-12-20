@@ -978,4 +978,8 @@
             </nav>
 
         </div>
+<<<<<<< Updated upstream
         <!--  END SIDEBAR  --> 
+=======
+
+>>>>>>> Stashed changes
