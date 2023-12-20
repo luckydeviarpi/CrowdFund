@@ -48,24 +48,6 @@
                         </div>
                     </form>
                 </li>
-
-                <li class="nav-item dropdown language-dropdown">
-                    <a href="javascript:void(0);" class="nav-link dropdown-toggle" id="language-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img src="assets
-/img/ca.png" class="flag-width" alt="flag">
-                    </a>
-                    <div class="dropdown-menu position-absolute" aria-labelledby="language-dropdown">
-                        <a class="dropdown-item d-flex" href="javascript:void(0);"><img src="assets
-/img/de.png" class="flag-width" alt="flag"> <span class="align-self-center">&nbsp;German</span></a>
-                        <a class="dropdown-item d-flex" href="javascript:void(0);"><img src="assets
-/img/jp.png" class="flag-width" alt="flag"> <span class="align-self-center">&nbsp;Japanese</span></a>
-                        <a class="dropdown-item d-flex" href="javascript:void(0);"><img src="assets
-/img/fr.png" class="flag-width" alt="flag"> <span class="align-self-center">&nbsp;French</span></a>
-                        <a class="dropdown-item d-flex" href="javascript:void(0);"><img src="assets
-/img/ca.png" class="flag-width" alt="flag"> <span class="align-self-center">&nbsp;English</span></a>
-                    </div>
-                </li>
-
                 <li class="nav-item dropdown message-dropdown">
                     <a href="javascript:void(0);" class="nav-link dropdown-toggle" id="messageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail">
@@ -292,8 +274,7 @@
                 <ul class="navbar-nav theme-brand flex-row  text-center">
                     <li class="nav-item theme-logo">
                         <a href="index.html">
-                            <img src="assets
-/img/90x90.jpg" class="navbar-logo" alt="logo">
+                        <img src="<?= base_url('assets/img/cork-logo.png'); ?>" class="navbar-logo" alt="logo">
                         </a>
                     </li>
                     <li class="nav-item theme-text">
@@ -997,27 +978,4 @@
             </nav>
 
         </div>
-        <!--  END SIDEBAR  --> <!-- BEGIN GLOBAL MANDATORY STYLES -->
-        <script src="<?= base_url('assets') ?>/js/libs/jquery-3.1.1.min.js"></script>
-        <script src="<?= base_url('bootstrap') ?>/js/popper.min.js"></script>
-        <script src="<?= base_url('bootstrap') ?>/js/bootstrap.min.js"></script>
-        <script src="plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-        <script src="<?= base_url('assets') ?>/js/app.js"></script>
-
-        <script>
-            $(document).ready(function() {
-                App.init();
-            });
-        </script>
-        <script src="plugins/highlight/highlight.pack.js"></script>
-        <script src="<?= base_url('assets') ?>/js/custom.js"></script>
-        <!-- END GLOBAL MANDATORY STYLES -->
-
-        <!-- BEGIN PAGE LEVEL SCRIPTS -->
-        <script src="<?= base_url('assets') ?>/js/scrollspyNav.js"></script>
-        <!-- END PAGE LEVEL SCRIPTS -->
-
-</body>
-
-</html>
-
+        <!--  END SIDEBAR  --> 

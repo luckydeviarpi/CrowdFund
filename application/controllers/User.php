@@ -10,6 +10,8 @@ class User extends CI_Controller
     function index()
     {
         $data['user'] = $this->userrole->getBy();
+        $this->load->view("Header/header", $data);
         $this->load->view("User/vw_profile", $data);
+        $this->load->view("Footer/footer", $data);
     }
 }
