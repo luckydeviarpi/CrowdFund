@@ -11,13 +11,11 @@ class User extends CI_Controller
     }
     function index()
     {
-<<<<<<< Updated upstream
-        $data['user'] = $this->userrole->getBy();
-=======
+        $user_id = $this->session->userdata('id');
         $data['user'] = $this->user->getBy();
         $data['usaha'] = $this->usaha->getBy();
-        $data['total_modal'] = $this->usaha->getTotalModal($this->session->userdata('id_user'));
->>>>>>> Stashed changes
+        $data['usaha'] = $this->usaha->getByUserId($user_id);
+        $data['total_modal'] = $this->usaha->getTotalModal($this->session->userdata('id'));
         $this->load->view("Header/header", $data);
         $this->load->view("User/vw_profile", $data);
         $this->load->view("Footer/footer", $data);

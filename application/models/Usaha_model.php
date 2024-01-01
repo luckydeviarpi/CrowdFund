@@ -24,11 +24,10 @@ class Usaha_model extends CI_Model
         return $query->result_array();
     }
 
-    public function getByid($id)
+    public function getByUserId($user_id)
     {
-        $this->db->where('id', $id);
-        $query = $this->db->get($this->table)->result_array();
-        return $query->row_array();
+        $this->db->where('id_user', $user_id);
+        return $this->db->get('usaha')->result_array();
     }
 
     public function update($where, $data)
@@ -55,15 +54,13 @@ class Usaha_model extends CI_Model
     }
     public function getTotalModal($userId)
     {
-        $this->db->select_sum('modal_awal');
+        $this->db->select_sum('modal_masuk');
         $this->db->where('id_user', $userId);
         $query = $this->db->get('usaha');
-
-        if ($query) {
-            $result = $query->row();
-            return $result ? $result->modal_awal : 0;
+        if ($query && $query->row()) {
+            return $query->row()->modal_masuk ?: 0;
         } else {
-            return 0; // or handle the error in a way that makes sense for your application
+            return 0;
         }
     }
 }

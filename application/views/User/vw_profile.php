@@ -1,7 +1,3 @@
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 <!--  BEGIN CONTENT AREA  -->
 <style>
     .profile-image {
@@ -24,12 +20,9 @@
 </style>
 <div id="content" class="main-content">
     <div class="layout-px-spacing">
-
         <div class="row layout-spacing">
-
             <!-- Content -->
             <div class="col-xl-4 col-lg-6 col-md-5 col-sm-12 layout-top-spacing">
-
                 <div class="user-profile layout-spacing">
                     <div class="widget-content widget-content-area">
                         <div class="d-flex justify-content-between">
@@ -211,84 +204,77 @@
                         color: #fff;
                         display: inline-block;
                         font-weight: bold;">Rp
-                            <?= $formattedModal; ?>
+                            <?= $formattedModal ?>
                         </h1>
                     </div>
                 </div>
 
-                <div class="bio layout-spacing ">
+                <div class="bio layout-spacing">
                     <div class="widget-content widget-content-area">
                         <div>
                             <h3 style="display: inline; margin-right: 69%;" class="">Usaha</h3>
-                            <a href="<?= site_url('Usaha/halamantambahusaha') ?>"><button style="display: inline" type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambahUsahaModal">
-                                Tambah Usaha (+)
-                            </button></a>
+                            <a href="<?= site_url('Usaha/halamantambahusaha') ?>"><button style="display: inline"
+                                    type="button" class="btn btn-primary" data-toggle="modal"
+                                    data-target="#tambahUsahaModal">
+                                    Tambah Usaha (+)
+                                </button></a>
                         </div>
-                        
-                        <div class="bio-skill-box">
-
-                            <div class="row">
-
-                                <div class="col-12 col-xl-6 col-lg-12 mb-xl-5 mb-5 ">
-
-                                    <div class="d-flex b-skills">
-                                        <div>
+                        <div class="container col-lg-12" style="display: inline;">
+                        <?php foreach ($usaha as $item): ?>
+                            <div class="rounded position-relative">
+                                <div class="fruite-img">
+                                    <div id="carouselExampleControls" class="carousel slide " data-ride="carousel">
+                                        <div class="carousel-inner img-fluid w-100 rounded-top">
+                                            <div class="carousel-item active">
+                                                <img class="d-block w-100" style="width: 100px; height: 400px;"
+                                                    src="<?= base_url('assets/img/' . $item['foto1']); ?>"
+                                                    alt="First slide">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img class="d-block w-100" style="width: 100px; height: 400px;"
+                                                    src="<?= base_url('assets/img/' . $item['foto2']); ?>"
+                                                    alt="Second slide">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img class="d-block w-100" style="width: 100px; height: 400px;"
+                                                    src="<?= base_url('assets/img/' . $item['foto3']); ?>"
+                                                    alt="Third slide">
+                                            </div>
                                         </div>
-                                        <div class="">
-                                            <h5>Sass Applications</h5>
-                                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse eu fugiat
-                                                nulla pariatur.</p>
+                                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button"
+                                            data-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="sr-only">Previous</span>
+                                        </a>
+                                        <a class="carousel-control-next" href="#carouselExampleControls" role="button"
+                                            data-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="sr-only">Next</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                    <h4><?= $item['nama_usaha'] ?></h4>
+                                    <div class="progress br-30">
+                                        <div class="progress-bar bg-primary" role="progressbar" style="width: 50%"
+                                            aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                            <div class="progress-title"><span>PHP</span> <span>25%</span> </div>
                                         </div>
                                     </div>
-
-                                </div>
-
-                                <div class="col-12 col-xl-6 col-lg-12 mb-xl-5 mb-5 ">
-
-                                    <div class="d-flex b-skills">
-                                        <div>
-                                        </div>
-                                        <div class="">
-                                            <h5>Github Countributer</h5>
-                                            <p>Ut enim ad minim veniam, quis nostrud exercitation aliquip ex ea commodo
-                                                consequat.</p>
-                                        </div>
+                                    <div class="d-flex justify-content-between flex-lg-wrap">
+                                        <p style="background-color: #1ABC9C;
+                                        padding: 8px;
+                                        border-radius: 10px;
+                                        color: #fff;
+                                        display: inline-block;
+                                        font-weight: bold;">Status : <?= $item['status'] ?></p>
+                                        <button class="btn btn-primary" style="width: 150px; height: 39px; padding: 8px; border-radius: 10px;"
+                                        >Edit Usaha</button>
                                     </div>
-
                                 </div>
-
-                                <div class="col-12 col-xl-6 col-lg-12 mb-xl-0 mb-5 ">
-
-                                    <div class="d-flex b-skills">
-                                        <div>
-                                        </div>
-                                        <div class="">
-                                            <h5>Photograhpy</h5>
-                                            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                                                anim id est laborum.</p>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                                <div class="col-12 col-xl-6 col-lg-12 mb-xl-0 mb-0 ">
-
-                                    <div class="d-flex b-skills">
-                                        <div>
-                                        </div>
-                                        <div class="">
-                                            <h5>Mobile Apps</h5>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do et
-                                                dolore magna aliqua.</p>
-                                        </div>
-                                    </div>
-
-                                </div>
-
                             </div>
-
+                            <?php endforeach; ?>
                         </div>
-
                     </div>
                 </div>
 
