@@ -27,10 +27,10 @@ class User_model extends CI_Model
   }
   public function update($where, $data)
   {
-    $this->db->update($this->table, $data, $where);
+    $this->db->where($where);
+    $this->db->update($this->table, $data);
     return $this->db->affected_rows();
   }
-
   public function updateFotoKTP($where, $fotoKTP)
   {
     $data = array('foto_ktp' => $fotoKTP);

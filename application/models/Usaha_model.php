@@ -3,45 +3,67 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Usaha_model extends CI_Model
 {
-  public $table = 'usaha';
-  public $id = 'usaha.id';
+    public $table = 'usaha';
+    public $id = 'usaha.id_usaha';
 
-  // ------------------------------------------------------------------------
+    public function __construct()
+    {
+        parent::__construct();
+    }
+    public function getBy()
+    {
+        $this->db->from($this->table);
+        $this->db->where('id_user', $this->session->userdata('id_user'));
+        $query = $this->db->get();
+        return $query->row_array();
+    }
 
-  public function __construct()
-  {
-      parent::__construct();
-  }
+    public function get()
+    {
+        $query = $this->db->get($this->table)->result_array();
+        return $query->result_array();
+    }
 
-  public function get()
-  {
-      $query = $this->db->get($this->table);
-      return $query->result_array();
-  }
+    public function getByid($id)
+    {
+        $this->db->where('id', $id);
+        $query = $this->db->get($this->table)->result_array();
+        return $query->row_array();
+    }
 
-  public function getByid($id)
-  {
-      $this->db->where('id', $id);
-      $query = $this->db->get($this->table);
-      return $query->row_array();
-  }
+    public function update($where, $data)
+    {
+        $this->db->update($this->table, $data, $where);
+        return $this->db->affected_rows();
+    }
 
-  public function update($where, $data)
-  {
-      $this->db->update($this->table, $data, $where);
-      return $this->db->affected_rows();
-  }
+    public function insert($data)
+    {
+        $this->db->insert($this->table, $data);
+        return $this->db->insert_id();
+    }
 
-  public function insert($data)
-  {
-      $this->db->insert($this->table, $data);
-      return $this->db->insert_id();
-  }
+    public function delete($id)
+    {
+        $this->db->where($this->id, $id);
+        $this->db->delete($this->table);
+        return $this->db->affected_rows();
+    }
+    public function tambah_usaha($data)
+    {
+        return $this->db->insert('usaha', $data);
+    }
+    public function getTotalModal($userId)
+    {
+        $this->db->select_sum('modal_awal');
+        $this->db->where('id_user', $userId);
+        $query = $this->db->get('usaha');
 
-  public function delete($id)
-  {
-      $this->db->where($this->id, $id);
-      $this->db->delete($this->table);
-      return $this->db->affected_rows();
-  }
+        if ($query) {
+            $result = $query->row();
+            return $result ? $result->modal_awal : 0;
+        } else {
+            return 0; // or handle the error in a way that makes sense for your application
+        }
+    }
 }
