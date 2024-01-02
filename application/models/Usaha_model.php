@@ -76,4 +76,15 @@ class Usaha_model extends CI_Model
         $query = $this->db->get('investasi');
         return $query->num_rows();
     }
+    public function getTotalModal($userId)
+    {
+        $this->db->select_sum('modal_masuk');
+        $this->db->where('id_user', $userId);
+        $query = $this->db->get('usaha');
+        if ($query && $query->row()) {
+            return $query->row()->modal_masuk ?: 0;
+        } else {
+            return 0;
+        }
+    }
 }
