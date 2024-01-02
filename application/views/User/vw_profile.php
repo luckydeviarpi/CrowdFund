@@ -132,7 +132,13 @@
                         <div class="container col-lg-12" style="display: inline;">
                         <?php foreach ($usaha as $item): ?>
                         <?php
-                        $formatJumlahInvestasi = number_format($item['jumlah_investasi'], 0, ',', '.');
+                        if ($item['jumlah_investasi'] !== null) {
+                            $formatJumlahInvestasi = number_format($item['jumlah_investasi'], 0, ',', '.');
+                            $persentase = round($item['jumlah_investasi'] / $item['modal_akhir'] * 100);
+                        } else {
+                            $formatJumlahInvestasi = number_format(0, 0, ',', '.'); // Set default value to 0
+                            $persentase = 0; // Set default value to 0
+                        }
                         $formatModalAkhir = number_format($item['modal_akhir'], 0, ',', '.');
                         $persentase = round(($item['jumlah_investasi'] / $item['modal_akhir']) * 100);
                         ?>
