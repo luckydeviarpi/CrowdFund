@@ -8,6 +8,7 @@
 <script src="<?= base_url('assets') ?>/js/custom.js"></script>
 <script src="<?= base_url('assets') ?>/js/elements/custom-search.js"></script>
 <script src="<?= base_url('assets') ?>/js/scrollspyNav.js"></script>
+<script src="<?= base_url('assets') ?>/js/apps/invoice-preview.js"></script>
 <script>
     $(document).ready(function() {
         App.init();

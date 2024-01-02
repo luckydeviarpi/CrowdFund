@@ -17,19 +17,16 @@
                             <div class="carousel-item active">
                                 <img class="d-block w-100 slide-image" src="<?= base_url('assets/img/momoyo3.jpg') ?>" alt="First slide">
                                 <div class="carousel-caption">
-                                    This is the photo description
                                 </div>
                             </div>
                             <div class="carousel-item">
                                 <img class="d-block w-100 slide-image" src="<?= base_url('assets/img/referensiAnimasi.jpeg') ?>" alt="Second slide">
                                 <div class="carousel-caption">
-                                    This is the photo description
                                 </div>
                             </div>
                             <div class="carousel-item">
                                 <img class="d-block w-100 slide-image" src="<?= base_url('assets/img/momoyo3.jpg') ?>" alt="Third slide">
                                 <div class="carousel-caption">
-                                    This is the photo description
                                 </div>
                             </div>
                         </div>
@@ -48,29 +45,29 @@
                         <div class="widget-content">
                             <div class="w-header">
                                 <div class="w-info">
-                                    <h6 class="value">Judul Usaha</h6>
-                                </div>
-                            </div>
-
-                            <div class="w-content">
-
-
-
-                            </div>
-
-                            <div class="w-progress-stats">
-                                <div class="progress">
-                                    <div class="progress-bar bg-gradient-success" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <div class="">
-                                    <div class="w-icon">
-                                        <p class="text-success">60%</p>
+                                    <h5 class="">Usaha Mixue</h5>
+                                    <div class="row">
+                                        <div class="col-md-9 small-text-left">
+                                            <small class="p-o-percentage mr-6">terkumpul <b>37.500.000</b> dari <b>50.000.000</b></small>
+                                        </div>
+                                        <div class="col-md-3 text-right">
+                                            <small class="p-o-percentage mr-6">75.00%</small>
+                                        </div>
                                     </div>
+                                    <div class="progress br-30">
+                                        <div class="progress-bar bg-success" role="progressbar" style="width: 75.00%" aria-valuenow="75.00" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+
+                                    <!-- Button to trigger the modal -->
+                                    <a href="<?= base_url('Investasi/invest/') . $usaha_detail['id_usaha']; ?>" class="btn btn-primary">
+                                        Investasi
+                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
             <br>
             <div class="row">
@@ -110,77 +107,54 @@
                                     </a>
                                 </li>
                             </ul>
-                            <p class="mb-4">
                             <div class="tab-content" id="animateLineContent-4">
-                                <div class="tab-pane fade active show" id="animated-underline-overview" role="tabpanel" aria-labelledby="animated-underline-overview-tab">
-                                    <div class="row">
-                                        <div class="col-md-6 text-left">
-                                            <span class=" p-o-percentage mr-6">terkumpul <b>Rp 6.000.000</b> dari <b>Rp 10.000.000</b></span>
-                                        </div>
-                                        <div class="col-md-6 text-right">
-                                            <span class=" p-o-percentage mr-6">60%</span>
-                                        </div>
-
-                                    </div>
-                                    <div class="progress br-30">
-                                        <div class="progress-bar bg-success" role="progressbar" style="width: 60%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-
-
+                                <div class="tab-pane fade show active" id="animated-underline-overview" role="tabpanel" aria-labelledby="animated-underline-overview-tab">
                                     <p class="dropcap  dc-outline-primary">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                    </p>
+                                        <?= $usaha_detail['deskripsi']; ?> </p>
                                 </div>
                                 <div class="tab-pane fade" id="animated-underline-documents" role="tabpanel" aria-labelledby="animated-underline-documents-tab">
-                                    <div class="media">
-                                        <div class="media-body">
-                                            <div class="row">
-                                                <div class="col-lg-3">
-                                                <p class="dropcap  dc-outline-primary">
-                                                    Dokumen1.pdf
-                                                </p>
-                                                </div>
-                                                <div class="col-lg-9">
-                                                <a href="javascript:void(0);" class="btn btn-success btn-print  action-print">Download</a>
-                                                <a href="javascript:void(0);" class="btn btn-primary btn-print  action-print">Print</a>
-                                                </div>
-                                            </div>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <p class="dropcap  dc-outline-primary">
+                                                <?= $usaha_detail['proposal']; ?> </p>
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <a href="<?= base_url('assets/img/uploads/' . $usaha_detail['proposal']); ?>" class="btn btn-primary btn-download action-download" download>Download</a>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade " id="animated-underline-hubungi" role="tabpanel" aria-labelledby="animated-underline-hubungi-tab">
-                                    <p class="dropcap  dc-outline-primary">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                    </p>
+                                <div class="tab-pane fade" id="animated-underline-hubungi" role="tabpanel" aria-labelledby="animated-underline-hubungi-tab">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <p class="dropcap  dc-outline-primary">
+                                                Kontak: <?= $usaha_detail['kontak']; ?> </p>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <a href="#" class="btn btn-secondary ">Chat dengan pemilik usaha</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!--  END CONTENT AREA  -->
     </div>
-    <!-- END MAIN CONTAINER -->
+    <!--  END CONTENT AREA  -->
+</div>
+<!-- END MAIN CONTAINER -->
 
-    <style>
-        .carousel-item {
-            height: 450px;
-            /* Set a fixed height for all carousel items */
-        }
+<style>
+    .carousel-item {
+        height: 450px;
+        /* Set a fixed height for all carousel items */
+    }
 
-        .carousel-item img {
-            object-fit: cover;
-            height: 100%;
-        }
-    </style>
+    .carousel-item img {
+        object-fit: cover;
+        height: 100%;
+    }
+</style>

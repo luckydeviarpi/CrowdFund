@@ -14,19 +14,19 @@
                                 <?= form_error('nama_usaha', '<small class="text-danger pl-3">', '</small>'); ?>
                             </div>
                             <div class="form-group">
-                                <label for="modal_butuh">Modal Butuh</label>
-                                <input type="text" value="<?= set_value('modal_butuh') ?>" class="form-control" id="modal_butuh" name="modal_butuh" placeholder="Modal Butuh">
-                                <?= form_error('modal_butuh', '<small class="text-danger pl-3">', '</small>'); ?>
-                            </div>
-                            <div class="form-group">
-                                <label for="modal_terima">Modal Terima</label>
-                                <input type="text" value="<?= set_value('modal_terima') ?>" class="form-control" id="modal_terima" name="modal_terima" placeholder="Modal Terima">
-                                <?= form_error('modal_terima', '<small class="text-danger pl-3">', '</small>'); ?>
+                                <label for="modal_akhir">Modal Butuh</label>
+                                <input type="text" value="<?= set_value('modal_akhir') ?>" class="form-control" id="modal_akhir" name="modal_akhir" placeholder="Modal Butuh">
+                                <?= form_error('modal_akhir', '<small class="text-danger pl-3">', '</small>'); ?>
                             </div>
                             <div class="form-group">
                                 <label for="tanggal_pembuatan">Tanggal Pembuatan</label>
                                 <input type="date" value="<?= set_value('tanggal_pembuatan') ?>" class="form-control" id="tanggal_pembuatan" name="tanggal_pembuatan">
                                 <?= form_error('tanggal_pembuatan', '<small class="text-danger pl-3">', '</small>'); ?>
+                            </div>
+                            <div class="form-group">
+                                <label for="kontak">Kontak yang bisa dihubungi</label>
+                                <input type="text" value="<?= set_value('kontak') ?>" class="form-control" id="kontak" name="kontak">
+                                <?= form_error('kontak', '<small class="text-danger pl-3">', '</small>'); ?>
                             </div>
                             <div class="form-group">
                                 <label for="deskripsi">Deskripsi</label>
