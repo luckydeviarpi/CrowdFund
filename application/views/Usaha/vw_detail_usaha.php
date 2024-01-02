@@ -66,7 +66,7 @@
                                         }
                                     }
                                     ?>
-                                    <h4><?= $usaha['nama_usaha']; ?></h4>
+                                    <h4 style = "font-weight: bold;"><?= $usaha['nama_usaha']; ?></h4>
                                     <p>Terkumpul Rp<?= $formatModalMasuk ?> dari Rp<?= $formatModalAkhir ?></p>
                                     <div class="progress br-30">
                                         <div class="progress-bar bg-primary" role="progressbar" style="width: <?= $persentase ?>%"
