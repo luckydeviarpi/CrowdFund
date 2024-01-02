@@ -10,8 +10,7 @@
 /img/favicon.ico" />
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
-    <link href="<?= base_url('bootstrap') ?>
-/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="<?= base_url('bootstrap') ?>/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="<?= base_url('assets') ?>
 /css/plugins.css" rel="stylesheet" type="text/css" />
     <link href="<?= base_url('assets') ?>
@@ -997,25 +996,7 @@
             </nav>
 
         </div>
-        <!--  END SIDEBAR  --> <!-- BEGIN GLOBAL MANDATORY STYLES -->
-        <script src="<?= base_url('assets') ?>/js/libs/jquery-3.1.1.min.js"></script>
-        <script src="<?= base_url('bootstrap') ?>/js/popper.min.js"></script>
-        <script src="<?= base_url('bootstrap') ?>/js/bootstrap.min.js"></script>
-        <script src="plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-        <script src="<?= base_url('assets') ?>/js/app.js"></script>
-
-        <script>
-            $(document).ready(function() {
-                App.init();
-            });
-        </script>
-        <script src="plugins/highlight/highlight.pack.js"></script>
-        <script src="<?= base_url('assets') ?>/js/custom.js"></script>
-        <!-- END GLOBAL MANDATORY STYLES -->
-
-        <!-- BEGIN PAGE LEVEL SCRIPTS -->
-        <script src="<?= base_url('assets') ?>/js/scrollspyNav.js"></script>
-        <!-- END PAGE LEVEL SCRIPTS -->
+        <!--  END SIDEBAR  --> 
 
 </body>
 
