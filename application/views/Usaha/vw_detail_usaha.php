@@ -86,10 +86,10 @@
                                         display: inline-block;
                                         font-weight: bold;">Status: <?= $usaha['status'] ?></p>
                                     </div>
-                                    <a href="<?= site_url('Usaha/detailusaha/' . $usaha['id_usaha']) ?>">
+                                    <a href="#" data-toggle="modal" data-target="#dividenModal">
                                         <button class="btn btn-info" style="margin-left: 89%; border-radius: 10px;">
-                                        Beri Dividen
-                                    </button>
+                                            Beri Dividen
+                                        </button>
                                     </a>
                                 </div>
                             </div>
@@ -100,4 +100,28 @@
         </div>
         <!--  END CONTENT AREA  -->
     </div>
+<div class="modal fade" id="dividenModal" tabindex="-1" role="dialog" aria-labelledby="dividenModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="dividenModalLabel">Pemberian Dividen</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+            <form id="dividenForm">
+                    <div class="form-group">
+                        <label for="dividenAmount">Jumlah Dividen:</label>
+                        <input type="text" class="form-control" id="dividenAmount" name="dividenAmount" placeholder="Masukkan jumlah dividen" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
     <!-- END MAIN CONTAINER -->
