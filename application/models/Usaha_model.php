@@ -71,4 +71,9 @@ class Usaha_model extends CI_Model
             return 0;
         }
     }
+    public function getByUsahaId($usaha_id)
+{
+    $this->db->where('id_usaha', $usaha_id);
+    return $this->db->get($this->table)->row_array();
+}
 }
