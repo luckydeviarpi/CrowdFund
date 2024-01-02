@@ -41,8 +41,9 @@ class Investasi extends CI_Controller
 
   public function detail($id)
   {
+    $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
     $data['usaha_detail'] = $this->usaha->getById($id); // Use the loaded model 'usaha' instead of 'Usaha_model'
-    $this->load->view("Header/header");
+    $this->load->view("Header/header",$data);
     $this->load->view("Investasi/vw_detailusaha", $data);
     $this->load->view("Footer/footer");
   }

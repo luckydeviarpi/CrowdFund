@@ -26,7 +26,7 @@
                                 <h5 class="card-title"><?= $us['nama_usaha']; ?></h5>
                                 <p class="card-text"><?= $us['deskripsi']; ?></p>
                                 <div class="row">
-                                    <div class="col-md-9 small-text-left">
+                                    <div class="col-md-9 small-text-left">  
                                         <small class=" p-o-percentage mr-6">terkumpul <b><?= number_format($us['total_investasi'], 0, ',', '.'); ?></b> dari <b><?= number_format($us['modal_akhir'], 0, ',', '.'); ?></b></small>
                                     </div>
                                     <div class="col-md-3 text-right">
