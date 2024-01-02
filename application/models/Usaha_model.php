@@ -26,6 +26,7 @@ class Usaha_model extends CI_Model
         return $query;
     }
 
+
     public function getByUserId($user_id)
     {
         $this->db->where('id_user', $user_id);
@@ -37,7 +38,7 @@ class Usaha_model extends CI_Model
         $this->db->where('id_usaha', $id_usaha);
         return $this->db->get($this->table)->row_array();
     }
-    
+
     public function update($where, $data)
     {
         $this->db->update($this->table, $data, $where);
@@ -60,15 +61,19 @@ class Usaha_model extends CI_Model
     {
         return $this->db->insert('usaha', $data);
     }
-    public function getTotalModal($userId)
+    public function getInvestasiSum($id_usaha)
     {
-        $this->db->select_sum('modal_masuk');
-        $this->db->where('id_user', $userId);
-        $query = $this->db->get('usaha');
-        if ($query && $query->row()) {
-            return $query->row()->modal_masuk ?: 0;
-        } else {
-            return 0;
-        }
+        $this->db->select_sum('jumlah_investasi', 'total_investasi');
+        $this->db->where('id_usaha', $id_usaha);
+        $query = $this->db->get('investasi');
+        $result = $query->row_array();
+
+        return (!empty($result['total_investasi'])) ? $result['total_investasi'] : 0;
+    }
+    public function getInvestasiCount($id_usaha)
+    {
+        $this->db->where('id_usaha', $id_usaha);
+        $query = $this->db->get('investasi');
+        return $query->num_rows();
     }
 }
