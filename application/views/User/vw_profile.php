@@ -130,9 +130,10 @@
                                 </button></a>
                         </div>
                         <div class="container col-lg-12" style="display: inline;">
+                        <?php foreach ($investasi as $brg): ?>
                         <?php foreach ($usaha as $item): ?>
                         <?php
-                        $formatModalMasuk = number_format($item['modal_masuk'], 0, ',', '.');
+                        $formatModalMasuk = number_format($brg['jumlah_investasi'], 0, ',', '.');
                         $formatModalAkhir = number_format($item['modal_akhir'], 0, ',', '.');
                         $persentase = round(($item['modal_masuk'] / $item['modal_akhir']) * 100);
                         ?>
@@ -215,6 +216,7 @@
                                 </a>
                                 </div>
                             </div>
+                            <?php endforeach; ?>
                             <?php endforeach; ?>
                         </div>
                     </div>

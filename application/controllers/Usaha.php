@@ -9,6 +9,7 @@ class Usaha extends CI_Controller
         parent::__construct();
         $this->load->model('User_model', 'user');
         $this->load->model('Usaha_model', 'usaha');
+        $this->load->model('Investasi_model', 'investasi');
     }
 
     public function index()
@@ -51,7 +52,6 @@ class Usaha extends CI_Controller
             'provinsi' => $this->input->post('provinsi'),
             'kota' => $this->input->post('kota'),
             'modal_akhir' => $this->input->post('modal_akhir'),
-            'modal_masuk' => 0,
             'status' => 'Diajukan',
             'id_user' => $id_user,
         ];
@@ -114,7 +114,9 @@ class Usaha extends CI_Controller
     {
         $this->load->model('Usaha_model', 'usaha');
         $this->load->model('User_model', 'user');
+        $this->load->model('Investasi_model', 'investasi');
 
+        $data['usaha'] = $this->usaha->getByUsahaId($id_usaha);
         $data['user'] = $this->user->getBy();
         $data['usaha'] = $this->usaha->getById($id_usaha);
 
@@ -150,7 +152,9 @@ class Usaha extends CI_Controller
     {
         $this->load->model('Usaha_model', 'usaha');
         $this->load->model('User_model', 'user');
+        $this->load->model('Investasi_model', 'investasi');
 
+        $data['investasi'] = $this->usaha->getByUsahaId($id_usaha);
         $data['user'] = $this->user->getBy();
         $data['usaha'] = $this->usaha->getById($id_usaha);
 

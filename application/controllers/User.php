@@ -7,6 +7,7 @@ class User extends CI_Controller
         parent::__construct();
         $this->load->model('User_model', 'user');
         $this->load->model('Usaha_model', 'usaha');
+        $this->load->model('Investasi_model', 'investasi');
         $this->load->library('upload');
     }
     function index()
@@ -15,7 +16,7 @@ class User extends CI_Controller
         $data['user'] = $this->user->getBy();
         $data['usaha'] = $this->usaha->getBy();
         $data['usaha'] = $this->usaha->getByUserId($user_id);
-        $data['total_modal'] = $this->usaha->getTotalModal($this->session->userdata('id'));
+        $data['total_modal'] = $this->investasi->getTotalInvestasi($this->session->userdata('id'));
         $this->load->view("Header/header", $data);
         $this->load->view("User/vw_profile", $data);
         $this->load->view("Footer/footer", $data);
