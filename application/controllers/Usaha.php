@@ -19,7 +19,7 @@ class Usaha extends CI_Controller
         $this->load->view("Usaha/usaha", $data);
         $this->load->view("Footer/footer", $data);
     }
-    
+
     public function halamantambahusaha()
     {
         $this->load->model('Usaha_model', 'usaha');
@@ -150,13 +150,15 @@ class Usaha extends CI_Controller
 
     public function detailusaha($id_usaha)
     {
+
         $this->load->model('Usaha_model', 'usaha');
         $this->load->model('User_model', 'user');
         $this->load->model('Investasi_model', 'investasi');
 
-        $data['investasi'] = $this->usaha->getByUsahaId($id_usaha);
         $data['user'] = $this->user->getBy();
         $data['usaha'] = $this->usaha->getById($id_usaha);
+
+        $data['investasi'] = $this->investasi->getInvestasiByUsahaId($id_usaha);
 
         $this->load->view("Header/header", $data);
         $this->load->view("Usaha/vw_detail_usaha", $data);

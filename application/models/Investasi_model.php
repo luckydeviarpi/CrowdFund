@@ -13,13 +13,27 @@ class Investasi_model extends CI_Model
 
     public function getByUserId($user_id)
     {
+        $this->db->select('jumlah_investasi');
         $this->db->where('id_user', $user_id);
-        return $this->db->get($this->table)->result_array();
+        $query = $this->db->get($this->table);
+
+        if ($query && $query->row()) {
+            return $query->row()->jumlah_investasi ?: 0;
+        } else {
+            return 0;
+        }
     }
     public function getByUsahaId($usaha_id)
     {
+        $this->db->select('jumlah_investasi');
         $this->db->where('id_usaha', $usaha_id);
-        return $this->db->get($this->table)->result_array();
+        $query = $this->db->get($this->table);
+
+        if ($query && $query->row()) {
+            return $query->row()->jumlah_investasi ?: 0;
+        } else {
+            return 0;
+        }
     }
 
     public function getById($id_investasi)
@@ -62,5 +76,12 @@ class Investasi_model extends CI_Model
         } else {
             return 0;
         }
+    }
+    public function getInvestasiByUsahaId($id_usaha)
+    {
+        $this->db->select('jumlah_investasi');
+        $this->db->where('id_usaha', $id_usaha);
+        $query = $this->db->get('investasi');
+        return $query->row_array();
     }
 }

@@ -16,7 +16,9 @@ class User extends CI_Controller
         // Load data for the user, usaha, and investasi
         $data['user'] = $this->user->getBy();
         $data['usaha'] = $this->usaha->getByUserId($user_id);
-        $data['investasi'] = $this->investasi->getByUserId($user_id); // Add this line
+        foreach ($data['usaha'] as &$business) {
+            $business['jumlah_investasi'] = $this->investasi->getInvestasiByUsahaId($business['id_usaha']);
+        }
         // Calculate total modal
         $data['total_modal'] = $this->investasi->getTotalInvestasi($this->session->userdata('id'));
         $this->load->view("Header/header", $data);
