@@ -15,6 +15,15 @@
     <!--  BEGIN CUSTOM STYLE FILE  -->
     <link href="<?= base_url('assets') ?>/css/elements/avatar.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="icon" type="image/x-icon" href="<?= base_url('assets') ?>/img/favicon.ico"/>
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+    <link href="<?= base_url('bootstrap') ?>/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="<?= base_url('assets') ?>/css/plugins.css" rel="stylesheet" type="text/css" />
+    <!-- END GLOBAL MANDATORY STYLES -->
+
+    <!-- BEGIN PAGE LEVEL STYLES -->
+    <link href="<?= base_url('assets') ?>/css/apps/mailing-chat.css" rel="stylesheet" type="text/css" />
     <!--  END CUSTOM STYLE FILE  -->
 </head>
 
@@ -118,7 +127,6 @@
                         </div>
                     </div>
                 </li>
-
                 <li class="nav-item dropdown user-profile-dropdown  order-lg-0 order-1">
                     <a href="javascript:void(0);" class="nav-link dropdown-toggle user" id="userProfileDropdown"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -129,7 +137,6 @@
                             <circle cx="12" cy="7" r="4"></circle>
                         </svg>
                     </a>
-
                     <div class="dropdown-menu position-absolute" aria-labelledby="userProfileDropdown">
                         <div class="user-profile-section">
                             <div class="media mx-auto">
