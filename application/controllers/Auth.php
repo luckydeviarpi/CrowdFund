@@ -59,6 +59,7 @@ class Auth extends CI_Controller
                 'no_telepon' => null, // Tambahkan kolom no telepon
                 'foto_ktp' => null,
                 'foto_npwp' => null,
+                'uang' => 0,
             ];
             $this->userrole->insert($data);
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Selamat Akunmu telah berhasil terdaftar, Silahkan Login!</div>');

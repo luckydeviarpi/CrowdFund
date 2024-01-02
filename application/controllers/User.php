@@ -105,7 +105,7 @@ class User extends CI_Controller
             'foto_npwp' => $foto_npwp,
             'foto_asli' => $foto_asli
         );
-
+        
         $this->user->update(array('email' => $this->session->userdata('email')), $data);
         redirect('user');
     }

@@ -29,7 +29,12 @@ class Usaha_model extends CI_Model
         $this->db->where('id_user', $user_id);
         return $this->db->get('usaha')->result_array();
     }
-
+    public function getById($id_usaha)
+    {
+        $this->db->where('id_usaha', $id_usaha);
+        return $this->db->get('usaha')->row_array();
+    }
+    
     public function update($where, $data)
     {
         $this->db->update($this->table, $data, $where);

@@ -221,6 +221,12 @@
                         </div>
                         <div class="container col-lg-12" style="display: inline;">
                         <?php foreach ($usaha as $item): ?>
+                        <?php
+                        $formatModalMasuk = number_format($item['modal_masuk'], 0, ',', '.');
+                        $formatModalAkhir = number_format($item['modal_akhir'], 0, ',', '.');
+                        $persentase = round(($item['modal_masuk'] / $item['modal_akhir']) * 100);
+                        ?>
+                        <br>
                             <div class="rounded position-relative">
                                 <div class="fruite-img">
                                     <div id="carouselExampleControls" class="carousel slide " data-ride="carousel">
@@ -254,23 +260,49 @@
                                     </div>
                                 </div>
                                 <div class="p-4 border border-secondary border-top-0 rounded-bottom">
+                                <?php
+                                    if (!function_exists('getStatusColor')) {
+                                        function getStatusColor($status)
+                                        {
+                                            switch ($status) {
+                                                case 'Diajukan':
+                                                    return '#ff0059';
+                                                case 'Berjalan':
+                                                    return '#0091ff';
+                                                case 'Selesai':
+                                                    return '#1ABC9C';
+                                                default:
+                                                    return '#ccc';
+                                            }
+                                        }
+                                    }
+                                    ?>
                                     <h4><?= $item['nama_usaha'] ?></h4>
+                                    <p>Terkumpul Rp<?= $formatModalMasuk ?> dari Rp<?= $formatModalAkhir ?></p>
                                     <div class="progress br-30">
-                                        <div class="progress-bar bg-primary" role="progressbar" style="width: 50%"
-                                            aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                                            <div class="progress-title"><span>PHP</span> <span>25%</span> </div>
+                                        <div class="progress-bar bg-primary" role="progressbar" style="width: <?= $persentase ?>%"
+                                            aria-valuenow="<?= $persentase ?>" aria-valuemin="0" aria-valuemax="100">
+                                            <div class="progress-title"><span></span><span><?= $persentase ?>%</span> </div>
                                         </div>
                                     </div>
                                     <div class="d-flex justify-content-between flex-lg-wrap">
-                                        <p style="background-color: #1ABC9C;
+                                        <p style="background-color: <?= getStatusColor($item['status']) ?>;
                                         padding: 8px;
                                         border-radius: 10px;
                                         color: #fff;
                                         display: inline-block;
-                                        font-weight: bold;">Status : <?= $item['status'] ?></p>
-                                        <button class="btn btn-primary" style="width: 150px; height: 39px; padding: 8px; border-radius: 10px;"
-                                        >Edit Usaha</button>
+                                        font-weight: bold;">Status: <?= $item['status'] ?></p>
                                     </div>
+                                    <a href="<?= site_url('Usaha/halamaneditusaha/' . $item['id_usaha']) ?>">
+                                        <button class="btn btn-outline-info" style="margin-left: 67%; border-radius: 10px;">
+                                        Detail Usaha
+                                    </button>
+                                </a>
+                                <a href="<?= site_url('Usaha/halamaneditusaha/' . $item['id_usaha']) ?>">
+                                        <button class="btn btn-primary" style="margin-left: 5px; border-radius: 10px;">
+                                        Edit Usaha
+                                    </button>
+                                </a>
                                 </div>
                             </div>
                             <?php endforeach; ?>
