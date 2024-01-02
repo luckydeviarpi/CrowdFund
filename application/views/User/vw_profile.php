@@ -135,7 +135,7 @@
                         <?php
                         $formatModalMasuk = number_format($brg['jumlah_investasi'], 0, ',', '.');
                         $formatModalAkhir = number_format($item['modal_akhir'], 0, ',', '.');
-                        $persentase = round(($item['modal_masuk'] / $item['modal_akhir']) * 100);
+                        $persentase = round(($brg['jumlah_investasi'] / $item['modal_akhir']) * 100);
                         ?>
                         <br>
                             <div class="rounded position-relative">
