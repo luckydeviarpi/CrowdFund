@@ -15,24 +15,27 @@ class Usaha_model extends CI_Model
         $this->db->from($this->table);
         $this->db->where('id_user', $this->session->userdata('id_user'));
         $query = $this->db->get();
-        return $query->row_array();
+        $result = $query->result_array();
+
+        return (!empty($result)) ? $result[0] : null;
     }
 
     public function get()
     {
         $query = $this->db->get($this->table)->result_array();
-        return $query->result_array();
+        return $query;
     }
 
     public function getByUserId($user_id)
     {
         $this->db->where('id_user', $user_id);
-        return $this->db->get('usaha')->result_array();
+        return $this->db->get($this->table)->result_array();
     }
+
     public function getById($id_usaha)
     {
         $this->db->where('id_usaha', $id_usaha);
-        return $this->db->get('usaha')->row_array();
+        return $this->db->get($this->table)->row_array();
     }
     
     public function update($where, $data)

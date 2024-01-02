@@ -293,7 +293,7 @@
                                         display: inline-block;
                                         font-weight: bold;">Status: <?= $item['status'] ?></p>
                                     </div>
-                                    <a href="<?= site_url('Usaha/halamaneditusaha/' . $item['id_usaha']) ?>">
+                                    <a href="<?= site_url('Usaha/detailusaha/' . $item['id_usaha']) ?>">
                                         <button class="btn btn-outline-info" style="margin-left: 67%; border-radius: 10px;">
                                         Detail Usaha
                                     </button>

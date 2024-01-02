@@ -7,8 +7,8 @@ class Usaha extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('Usaha_model');
-        $this->load->model('User_model');
+        $this->load->model('User_model', 'user');
+        $this->load->model('Usaha_model', 'usaha');
     }
 
     public function index()
@@ -132,7 +132,7 @@ class Usaha extends CI_Controller
         $kota = $this->input->post('kota');
 
         $this->load->model('Usaha_model', 'usaha');
-        
+
         $data_usaha = [
             'nama_usaha' => $nama_usaha,
             'deskripsi' => $deskripsi,
@@ -144,5 +144,18 @@ class Usaha extends CI_Controller
         // Update data in the database
         $this->usaha->update(['id_usaha' => $id_usaha], $data_usaha);
         redirect('User');
+    }
+
+    public function detailusaha($id_usaha)
+    {
+        $this->load->model('Usaha_model', 'usaha');
+        $this->load->model('User_model', 'user');
+
+        $data['user'] = $this->user->getBy();
+        $data['usaha'] = $this->usaha->getById($id_usaha);
+
+        $this->load->view("Header/header", $data);
+        $this->load->view("Usaha/vw_detail_usaha", $data);
+        $this->load->view("Footer/footer", $data);
     }
 }
