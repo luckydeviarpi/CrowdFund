@@ -158,7 +158,7 @@ class Usaha extends CI_Controller
         $data['user'] = $this->user->getBy();
         $data['usaha'] = $this->usaha->getById($id_usaha);
 
-        $data['investasi'] = $this->investasi->getInvestasiByUsahaId($id_usaha);
+        $data['investasi'] = $this->investasi->getInvestasiByUsahaId2($id_usaha);
 
         $this->load->view("Header/header", $data);
         $this->load->view("Usaha/vw_detail_usaha", $data);

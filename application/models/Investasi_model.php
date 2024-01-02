@@ -23,6 +23,7 @@ class Investasi_model extends CI_Model
             return 0;
         }
     }
+
     public function getByUsahaId($usaha_id)
     {
         $this->db->select('jumlah_investasi');
@@ -78,6 +79,14 @@ class Investasi_model extends CI_Model
         }
     }
     public function getInvestasiByUsahaId($id_usaha)
+    {
+        $this->db->select_sum('jumlah_investasi');
+        $this->db->where('id_usaha', $id_usaha);
+        $query = $this->db->get('investasi');
+
+        return $query->row()->jumlah_investasi;
+    }
+    public function getInvestasiByUsahaId2($id_usaha)
     {
         $this->db->select('jumlah_investasi');
         $this->db->where('id_usaha', $id_usaha);
