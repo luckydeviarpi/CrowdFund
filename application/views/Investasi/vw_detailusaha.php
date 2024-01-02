@@ -43,12 +43,43 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 layout-spacing">
+                    <div class="widget widget-card-four">
+                        <div class="widget-content">
+                            <div class="w-header">
+                                <div class="w-info">
+                                    <h6 class="value">Judul Usaha</h6>
+                                </div>
+                            </div>
+
+                            <div class="w-content">
+
+
+
+                            </div>
+
+                            <div class="w-progress-stats">
+                                <div class="progress">
+                                    <div class="progress-bar bg-gradient-success" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <div class="">
+                                    <div class="w-icon">
+                                        <p class="text-success">60%</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-lg-12">
                     <div class="statbox widget box box-shadow">
                         <div class="widget-header">
                             <div class="row">
                                 <div class="col-xl-12 col-md-12 col-sm-12 col-12">
-                                    <h4>Judul Usaha</h4>
+                                    <h4>Informasi</h4>
                                 </div>
                             </div>
                         </div>
@@ -83,18 +114,18 @@
                             <div class="tab-content" id="animateLineContent-4">
                                 <div class="tab-pane fade active show" id="animated-underline-overview" role="tabpanel" aria-labelledby="animated-underline-overview-tab">
                                     <div class="row">
-                                    <div class="col-md-6 text-left">
-                                        <span class=" p-o-percentage mr-6">terkumpul <b>Rp 6.000.000</b> dari <b>Rp 10.000.000</b></span>
-                                    </div>
-                                    <div class="col-md-6 text-right">
-                                        <span class=" p-o-percentage mr-6">60%</span>
-                                    </div>
+                                        <div class="col-md-6 text-left">
+                                            <span class=" p-o-percentage mr-6">terkumpul <b>Rp 6.000.000</b> dari <b>Rp 10.000.000</b></span>
+                                        </div>
+                                        <div class="col-md-6 text-right">
+                                            <span class=" p-o-percentage mr-6">60%</span>
+                                        </div>
 
                                     </div>
                                     <div class="progress br-30">
                                         <div class="progress-bar bg-success" role="progressbar" style="width: 60%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
-                                    
+
 
                                     <p class="dropcap  dc-outline-primary">
                                         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -107,9 +138,18 @@
                                 </div>
                                 <div class="tab-pane fade" id="animated-underline-documents" role="tabpanel" aria-labelledby="animated-underline-documents-tab">
                                     <div class="media">
-                                        <img class="mr-3" src="assets/img/90x90.jpg" alt="Generic placeholder image">
                                         <div class="media-body">
-                                            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                                            <div class="row">
+                                                <div class="col-lg-3">
+                                                <p class="dropcap  dc-outline-primary">
+                                                    Dokumen1.pdf
+                                                </p>
+                                                </div>
+                                                <div class="col-lg-9">
+                                                <a href="javascript:void(0);" class="btn btn-success btn-print  action-print">Download</a>
+                                                <a href="javascript:void(0);" class="btn btn-primary btn-print  action-print">Print</a>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
