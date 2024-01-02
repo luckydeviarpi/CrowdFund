@@ -52,7 +52,14 @@ class Auth extends CI_Controller
                 'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
                 'gambar' => 'default.jpg',
                 'role' => 'User',
-                'date_created' => date('Y-m-d')
+                'date_created' => date('Y-m-d'),
+                'status_autentikasi' => 'Belum Autentikasi', // Tambahkan kolom status_autentikasi
+                'provinsi' => null, // Tambahkan kolom provinsi
+                'kota' => null, // Tambahkan kolom kota
+                'no_telepon' => null, // Tambahkan kolom no telepon
+                'foto_ktp' => null,
+                'foto_npwp' => null,
+                'uang' => 0,
             ];
             $this->userrole->insert($data);
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Selamat Akunmu telah berhasil terdaftar, Silahkan Login!</div>');

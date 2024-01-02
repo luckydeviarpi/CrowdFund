@@ -10,7 +10,10 @@
         App.init();
     });
 </script>
+
 <script src="<?= base_url('plugins')?>/highlight/highlight.pack.js"></script>
+<script src="<?= base_url('plugins') ?>/highlight/highlight.pack.js"></script>
+
 <script src="<?= base_url('assets') ?>/js/custom.js"></script>
 <!-- END GLOBAL MANDATORY STYLES -->
 
