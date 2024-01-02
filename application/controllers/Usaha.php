@@ -138,6 +138,7 @@ class Usaha extends CI_Controller
             'deskripsi' => $deskripsi,
             'alamat' => $alamat,
             'provinsi' => $provinsi,
+            'kota' => $kota,
         ];
 
         // Update data in the database
