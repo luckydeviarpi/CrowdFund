@@ -25,22 +25,25 @@ class Investasi extends CI_Controller
   // Add this new function to get usaha with total_investasi
   private function getUsahaWithTotalInvestasi()
   {
-      $usahaList = $this->usaha->get();
-  
-      foreach ($usahaList as &$us) {
-          $us['total_investasi'] = $this->usaha->getInvestasiSum($us['id_usaha']);
-          
-          // Get the count of records in the investasi table for the current usaha
-          $us['jumlah_investor'] = $this->usaha->getInvestasiCount($us['id_usaha']);
-      }
-  
-      return $usahaList;
+    $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+    $usahaList = $this->usaha->get();
+
+    foreach ($usahaList as &$us) {
+      $us['total_investasi'] = $this->usaha->getInvestasiSum($us['id_usaha']);
+
+      // Get the count of records in the investasi table for the current usaha
+      $us['jumlah_investor'] = $this->usaha->getInvestasiCount($us['id_usaha']);
+    }
+
+    return $usahaList;
   }
-  
+
 
 
   public function detail($id)
   {
+    $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
     $data['usaha_detail'] = $this->usaha->getById($id); // Use the loaded model 'usaha' instead of 'Usaha_model'
     $this->load->view("Header/header");
     $this->load->view("Investasi/vw_detailusaha", $data);
