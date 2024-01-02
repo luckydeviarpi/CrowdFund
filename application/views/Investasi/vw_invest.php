@@ -21,7 +21,7 @@
                 <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 layout-top-spacing">
                     <a href="<?= base_url('Investasi/detail/') . $us['id_usaha']; ?>" class="card-link">
                         <div class="card component-card_9">
-                            <img src="<?= base_url('assets') ?>/img/momoyo.png" class="card-img-top" style="max-height: 300px;" alt="widget-card-2">
+                        <img src="<?= base_url('assets/img/'. $us['foto1']); ?>" class="card-img-top" style="max-height: 300px;" alt="<?= $us['nama_usaha']; ?>">
                             <div class="card-body">
                                 <h5 class="card-title"><?= $us['nama_usaha']; ?></h5>
                                 <p class="card-text"><?= $us['deskripsi']; ?></p>
