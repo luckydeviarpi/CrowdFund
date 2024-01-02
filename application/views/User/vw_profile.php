@@ -132,9 +132,15 @@
                         <div class="container col-lg-12" style="display: inline;">
                         <?php foreach ($usaha as $item): ?>
                         <?php
-                        $formatModalMasuk = number_format($item['modal_masuk'], 0, ',', '.');
+                        if ($item['jumlah_investasi'] !== null) {
+                            $formatJumlahInvestasi = number_format($item['jumlah_investasi'], 0, ',', '.');
+                            $persentase = round($item['jumlah_investasi'] / $item['modal_akhir'] * 100);
+                        } else {
+                            $formatJumlahInvestasi = number_format(0, 0, ',', '.'); // Set default value to 0
+                            $persentase = 0; // Set default value to 0
+                        }
                         $formatModalAkhir = number_format($item['modal_akhir'], 0, ',', '.');
-                        $persentase = round(($item['modal_masuk'] / $item['modal_akhir']) * 100);
+                        $persentase = round(($item['jumlah_investasi'] / $item['modal_akhir']) * 100);
                         ?>
                         <br>
                             <div class="rounded position-relative">
@@ -188,7 +194,7 @@
                                     }
                                     ?>
                                     <h4><?= $item['nama_usaha'] ?></h4>
-                                    <p>Terkumpul Rp<?= $formatModalMasuk ?> dari Rp<?= $formatModalAkhir ?></p>
+                                    <p>Terkumpul Rp<?= $formatJumlahInvestasi ?> dari Rp<?= $formatModalAkhir ?></p>
                                     <div class="progress br-30">
                                         <div class="progress-bar bg-primary" role="progressbar" style="width: <?= $persentase ?>%"
                                             aria-valuenow="<?= $persentase ?>" aria-valuemin="0" aria-valuemax="100">

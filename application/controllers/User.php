@@ -7,15 +7,20 @@ class User extends CI_Controller
         parent::__construct();
         $this->load->model('User_model', 'user');
         $this->load->model('Usaha_model', 'usaha');
+        $this->load->model('Investasi_model', 'investasi');
         $this->load->library('upload');
     }
     function index()
     {
         $user_id = $this->session->userdata('id');
+        // Load data for the user, usaha, and investasi
         $data['user'] = $this->user->getBy();
-        $data['usaha'] = $this->usaha->getBy();
         $data['usaha'] = $this->usaha->getByUserId($user_id);
-        $data['total_modal'] = $this->usaha->getTotalModal($this->session->userdata('id'));
+        foreach ($data['usaha'] as &$business) {
+            $business['jumlah_investasi'] = $this->investasi->getInvestasiByUsahaId($business['id_usaha']);
+        }
+        // Calculate total modal
+        $data['total_modal'] = $this->investasi->getTotalInvestasi($this->session->userdata('id'));
         $this->load->view("Header/header", $data);
         $this->load->view("User/vw_profile", $data);
         $this->load->view("Footer/footer", $data);
@@ -105,7 +110,7 @@ class User extends CI_Controller
             'foto_npwp' => $foto_npwp,
             'foto_asli' => $foto_asli
         );
-        
+
         $this->user->update(array('email' => $this->session->userdata('email')), $data);
         redirect('user');
     }

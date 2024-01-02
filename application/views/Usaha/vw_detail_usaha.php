@@ -11,9 +11,9 @@
                     <div class="widget-content widget-content-area">
                         <div class="container col-lg-12" style="display: inline;">
                         <?php
-                        $formatModalMasuk = number_format($usaha['modal_masuk'], 0, ',', '.');
+                        $formatJumlahInvestasi = number_format($investasi['jumlah_investasi'], 0, ',', '.');
                         $formatModalAkhir = number_format($usaha['modal_akhir'], 0, ',', '.');
-                        $persentase = round(($usaha['modal_masuk'] / $usaha['modal_akhir']) * 100);
+                        $persentase = round(($investasi['jumlah_investasi'] / $usaha['modal_akhir']) * 100);
                         ?>
                         <br>
                             <div class="rounded position-relative">
@@ -67,7 +67,7 @@
                                     }
                                     ?>
                                     <h4 style = "font-weight: bold;"><?= $usaha['nama_usaha']; ?></h4>
-                                    <p>Terkumpul Rp<?= $formatModalMasuk ?> dari Rp<?= $formatModalAkhir ?></p>
+                                    <p>Terkumpul Rp<?= $formatJumlahInvestasi ?> dari Rp<?= $formatModalAkhir ?></p>
                                     <div class="progress br-30">
                                         <div class="progress-bar bg-primary" role="progressbar" style="width: <?= $persentase ?>%"
                                             aria-valuenow="<?= $persentase ?>" aria-valuemin="0" aria-valuemax="100">
@@ -118,8 +118,8 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                <button type="button" class="btn btn-primary">Kirim Dividen</button>
             </div>
         </div>
     </div>
