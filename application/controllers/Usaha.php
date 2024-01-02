@@ -18,7 +18,7 @@ class Usaha extends CI_Controller
         $this->load->view("Usaha/usaha", $data);
         $this->load->view("Footer/footer", $data);
     }
-
+    
     public function halamantambahusaha()
     {
         $this->load->model('Usaha_model', 'usaha');
@@ -157,5 +157,18 @@ class Usaha extends CI_Controller
         $this->load->view("Header/header", $data);
         $this->load->view("Usaha/vw_detail_usaha", $data);
         $this->load->view("Footer/footer", $data);
+    }
+
+    public function getTotalModal($userId)
+    {
+        $this->db->select_sum('modal_masuk');
+        $this->db->where('id_user', $userId);
+        $query = $this->db->get($this->table);
+
+        if ($query && $query->row()) {
+            return $query->row()->modal_masuk ?: 0;
+        } else {
+            return 0;
+        }
     }
 }
