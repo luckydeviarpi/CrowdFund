@@ -179,8 +179,16 @@
             /* Set a fixed height for all carousel items */
         }
 
+<<<<<<< Updated upstream
         .carousel-item img {
             object-fit: cover;
             height: 100%;
         }
     </style>
+=======
+    .carousel-item img {
+        object-fit: cover;
+        height: 100%;
+    }
+</style>
+>>>>>>> Stashed changes
