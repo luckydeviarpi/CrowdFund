@@ -37,7 +37,7 @@ class Usaha_model extends CI_Model
         $this->db->where('id_usaha', $id_usaha);
         return $this->db->get($this->table)->row_array();
     }
-    
+
     public function update($where, $data)
     {
         $this->db->update($this->table, $data, $where);
@@ -72,8 +72,23 @@ class Usaha_model extends CI_Model
         }
     }
     public function getByUsahaId($usaha_id)
-{
-    $this->db->where('id_usaha', $usaha_id);
-    return $this->db->get($this->table)->row_array();
-}
+    {
+        $this->db->where('id_usaha', $usaha_id);
+        return $this->db->get($this->table)->row_array();
+    }
+    public function getInvestasiSum($id_usaha)
+    {
+        $this->db->select_sum('jumlah_investasi', 'total_investasi');
+        $this->db->where('id_usaha', $id_usaha);
+        $query = $this->db->get('investasi');
+        $result = $query->row_array();
+
+        return (!empty($result['total_investasi'])) ? $result['total_investasi'] : 0;
+    }
+    public function getInvestasiCount($id_usaha)
+    {
+        $this->db->where('id_usaha', $id_usaha);
+        $query = $this->db->get('investasi');
+        return $query->num_rows();
+    }
 }

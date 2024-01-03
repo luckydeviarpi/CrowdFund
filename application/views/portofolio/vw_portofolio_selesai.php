@@ -59,46 +59,43 @@ $judul = 'Halaman Portofolio'; // Atur judul sesuai kebutuhan
             </div>
             <!-- Content -->
             <div class="row layout-spacing">
-                <!-- Content -->
-                <div class="row layout-top-spacing">
-                    <a href="<?= base_url('Test/detail') ?>" class="card-link">
-                        <div class="card component-card_9" style="width: 100%; display: flex; flex-direction: row; max-height: fit-content; overflow: hidden;">
-                            <div class="col-md-6">
-                                <img src="<?= base_url('assets') ?>/img/momoyo.png" class="card-img-top" style="width: 100%; height: 100%; object-fit: cover;" alt="widget-card-2">
-                            </div>
-                            <div class="col-md-6">
-                                <div class="card-body">
-                                    <h5 class="card-title">Ini Title Usaha</h5>
-                                    <p class="card-text">Ini Deskripsi singkat Usahanya.</p>
-                                    <div class="col-md-12 text-right">
-                                        <span class="p-o-percentage mr-6">60%</span>
+                <?php foreach ($usaha as $us) : ?>
+                    <div class="col-xl-6 layout-top-spacing">
+                        <a href="<?= base_url('Investasi/detail/') . $us['id_usaha']; ?>" class="card-link">
+                            <div class="card">
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+                                        <img src="<?= base_url('assets/img/' . $us['foto1']); ?>" class="img-fluid rounded-start" alt="<?= $us['nama_usaha']; ?>">
                                     </div>
-                                    <div class="progress br-30">
-                                        <div class="progress-bar bg-success" role="progressbar" style="width: 40%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <div class="meta-info" style="font-size: 18px;">
-                                        <div class="row">
-                                            <div class="col"><b>Jumlah Dana</b></div>
-                                            <div class="col"><b>Imbal Hasil</b></div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col"><b>Rp 6.600.000</b></div>
-                                            <div class="col"><b>13%</b></div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col"><b>Harga Per Lembar</b></div>
-                                            <div class="col"><b>Total Lembar</b></div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col"><b>Rp 2.500</b></div>
-                                            <div class="col"><b>10.000</b></div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title"><?= $us['nama_usaha']; ?></h5>
+                                            <p class="card-text"><?= $us['deskripsi']; ?></p>
+                                            <small class=" p-o-percentage mr-6">Terkumpul <b><?= number_format($us['total_investasi'], 0, ',', '.'); ?></b> dari <b><?= number_format($us['modal_akhir'], 0, ',', '.'); ?></b></small>
+                                            <?php
+                                            $progress = ($us['modal_akhir'] != 0) ? number_format(($us['total_investasi'] / $us['modal_akhir']) * 100, 2) : '0.00';
+                                            ?>
+                                            <small class="p-o-percentage"><?= $progress; ?>%</small>
+                                            <div class="progress br-30 mt-2">
+                                                <div class="progress-bar bg-success" role="progressbar" style="width: <?= $progress; ?>%" aria-valuenow="<?= $progress; ?>" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                            <div class="meta-info mt-2">
+                                                <div class="row">
+                                                    <div class="col">Jumlah Investor</div>
+                                                    <div class="col">Status</div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col"><b><?= $us['jumlah_investor']; ?></b> Investor</div>
+                                                    <div class="col"><b><?= $us['status']; ?></b></div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
+                        </a>
+                    </div>
+                <?php endforeach; ?>
             </div>
         </div>
     </div>
