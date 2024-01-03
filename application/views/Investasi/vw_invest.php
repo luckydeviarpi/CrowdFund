@@ -5,14 +5,19 @@
             <div class="row layout-spacing">
             </div>
             <div class="col-lg-8 col-md-8 col-sm-9 filtered-list-search mx-auto">
-                <form class="form-inline my-2 my-lg-0 justify-content-center">
+                <!-- Modify the form action to point to the search method -->
+                <!-- Modify the form action to point to the current page with GET method -->
+                <form class="form-inline my-2 my-lg-0 justify-content-center" action="<?= current_url(); ?>" method="get">
                     <div class="w-100">
-                        <input type="text" class="w-100 form-control product-search br-30" id="input-search" placeholder="Cari di WiraFund...">
-                        <button class="btn btn-primary" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+                        <input type="text" class="w-100 form-control product-search br-30" id="input-search" name="keyword" placeholder="Cari di WiraFund...">
+                        <button class="btn btn-primary" type="submit">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
                                 <circle cx="11" cy="11" r="8"></circle>
                                 <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                            </svg></button>
+                            </svg>
+                        </button>
                     </div>
+                </form>
             </div>
         </div>
         <div class="row layout-spacing">
@@ -21,12 +26,12 @@
                 <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 layout-top-spacing">
                     <a href="<?= base_url('Investasi/detail/') . $us['id_usaha']; ?>" class="card-link">
                         <div class="card component-card_9">
-                        <img src="<?= base_url('assets/img/'. $us['foto1']); ?>" class="card-img-top" style="max-height: 300px;" alt="<?= $us['nama_usaha']; ?>">
+                            <img src="<?= base_url('assets/img/' . $us['foto1']); ?>" class="card-img-top" style="max-height: 300px;" alt="<?= $us['nama_usaha']; ?>">
                             <div class="card-body">
                                 <h5 class="card-title"><?= $us['nama_usaha']; ?></h5>
                                 <p class="card-text"><?= $us['deskripsi']; ?></p>
                                 <div class="row">
-                                    <div class="col-md-9 small-text-left">  
+                                    <div class="col-md-9 small-text-left">
                                         <small class=" p-o-percentage mr-6">terkumpul <b><?= number_format($us['total_investasi'], 0, ',', '.'); ?></b> dari <b><?= number_format($us['modal_akhir'], 0, ',', '.'); ?></b></small>
                                     </div>
                                     <div class="col-md-3 text-right">
@@ -46,7 +51,21 @@
                                     </div>
                                     <div class="row">
                                         <div class="col"><b><?= $us['jumlah_investor']; ?></b> Investor</div>
-                                        <div class="col"><b><?= $us['status']; ?></b></div>
+                                        <div class="col">
+                                            <?php
+                                            $statusClass = '';
+
+                                            // Check the value of $us['status'] and set the corresponding class
+                                            if ($us['status'] == 'Buka') {
+                                                $statusClass = 'text-primary';
+                                            } elseif ($us['status'] == 'Selesai') {
+                                                $statusClass = 'text-success';
+                                            }
+
+                                            // Output the status with the determined class
+                                            echo '<b class="' . $statusClass . '">' . $us['status'] . '</b>';
+                                            ?>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -55,9 +74,6 @@
                 </div>
             <?php endforeach; ?>
         </div>
-        </form>
-
-
     </div>
 </div>
 <!--  END CONTENT AREA  -->

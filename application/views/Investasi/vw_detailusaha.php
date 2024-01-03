@@ -153,6 +153,12 @@
         /* Set a fixed height for all carousel items */
     }
 
+
+    .carousel-item img {
+        object-fit: cover;
+        height: 100%;
+    }
+
     .carousel-item img {
         object-fit: cover;
         height: 100%;
