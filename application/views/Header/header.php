@@ -132,7 +132,7 @@
                     </li>
 
                     <li class="menu">
-                        <a target="_blank" href="../../documentation/index.html" aria-expanded="false"
+                        <a target="_blank" href="<?= site_url('Portoflio') ?>" aria-expanded="false"
                             class="dropdown-toggle">
                             <div class="">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -147,7 +147,7 @@
                     </li>
 
                     <li class="menu">
-                        <a href="#users" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">
+                        <a href="<?= site_url('User') ?>" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">
                             <div class="">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
